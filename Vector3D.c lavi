@@ -7,6 +7,11 @@
 using namespace std;
 
 //constructor
+Vector3D::Vector3D(){
+  x_ = 0.;
+  y_ = 0.;
+  z_ = 0.;
+}
 Vector3D::Vector3D(double x, double y, double z) {
   x_ = x;
   y_ = y;
@@ -39,8 +44,12 @@ double Vector3D::phi(){
   double p = atan2( y_ , x_ );
   return p;
 }
+double Vector3D::scalar(Vector3D v){
+  return x_*v.x_ + y_*v.y_ + z_*v.z_;
+}
 
 //print
 void Vector3D::print() {
   cout << "v = (" << x_ << ", " << y_ << ", " << z_ << ") \t r = " << this -> magnitude() << " \t theta = " << this -> theta() << " \t phi = " << phi() << endl;
 }
+
