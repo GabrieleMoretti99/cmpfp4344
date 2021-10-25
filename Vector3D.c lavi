@@ -1,0 +1,38 @@
+// Vector3D.c
+
+#include "Vector3D.h"
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+//constructor
+Vector3D::Vector3D(double x, double y, double z) {
+  x_ = x;
+  y_ = y;
+  z_ = z;
+}
+
+//getters
+double Vector3D::getx() { return x_; }
+double Vector3D::gety() { return y_; }
+double Vector3D::getz() { return z_; }
+
+
+//setters
+void Vector3D::setVector3D(double x, double y, double z) {
+  x_ = x;
+  y_ = y;
+  z_ = z;
+}
+
+double Vector3D::magnitude(){
+  double mag = sqrt(pow(x_,2.) + pow(y_,2.) + pow(z_,2.));
+  return mag;
+}
+
+
+//print
+void Vector3D::print() {
+  cout << "Componenti del vettore (x, y, z) = (" << x_ << ", " << y_ << ", " << z_ << ") e m = " << this-> magnitude() <<endl;
+}
