@@ -3,6 +3,7 @@
 class Vector3D {
  public:
   //constructor
+  Vector3D();
   Vector3D(double x, double y, double z);
 
   //getters
@@ -17,6 +18,7 @@ class Vector3D {
   double magnitude();
   double theta();
   double phi();
+  double scalar(Vector3D v);
 
   //print
   void print();
@@ -27,6 +29,8 @@ class Vector3D {
   double y_;
   double z_;
 };
+ 
+
  
 
   
