@@ -15,6 +15,8 @@ class Vector3D {
   
   //funzioni
   double magnitude();
+  double theta();
+  double phi();
 
   //print
   void print();
@@ -25,3 +27,6 @@ class Vector3D {
   double y_;
   double z_;
 };
+ 
+
+  
