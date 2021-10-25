@@ -26,13 +26,21 @@ void Vector3D::setVector3D(double x, double y, double z) {
   z_ = z;
 }
 
+//funzioni
 double Vector3D::magnitude(){
   double mag = sqrt(pow(x_,2.) + pow(y_,2.) + pow(z_,2.));
   return mag;
 }
-
+double Vector3D::theta(){
+  double t = atan2( sqrt(pow(x_,2.) + pow(y_,2.)) , z_ );
+  return t;
+}
+double Vector3D::phi(){
+  double p = atan2( y_ , x_ );
+  return p;
+}
 
 //print
 void Vector3D::print() {
-  cout << "Componenti del vettore (x, y, z) = (" << x_ << ", " << y_ << ", " << z_ << ") e m = " << this-> magnitude() <<endl;
+  cout << "v = (" << x_ << ", " << y_ << ", " << z_ << ") \t r = " << this -> magnitude() << " \t theta = " << this -> theta() << " \t phi = " << phi() << endl;
 }
