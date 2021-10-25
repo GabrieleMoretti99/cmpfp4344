@@ -1,17 +1,27 @@
 //Vector3D.cpp
 
 #include "Vector3D.h"
+#include <iostream>
+using namespace std;
 
 int main () {
 
-  Vector3D v1(2.,0.,0);
+  Vector3D v1(0,0,0);
   
+  v1.setVector3D(1,2,3);
   v1.magnitude();
+  v1.theta();
+  v1.phi();
+  cout << "Vettore v1:" << endl;
   v1.print();
 
-  v1.setVector3D(1.,2.,3.);
-  v1.magnitude();
-  v1.print();
+  Vector3D v2(0,0,0);
+  v2.setVector3D(4,5,6);
+  v2.magnitude();
+  v2.theta();
+  v2.phi();
+  cout << "\nVettore v2:" << endl;
+  v2.print();
 
   return 0;
 
