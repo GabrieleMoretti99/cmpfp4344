@@ -2,7 +2,5 @@
 #include<cmath>
 
 class Complex {
-  Complex(double real, double im)
-
-
+  Complex(double real, double im);
 }
