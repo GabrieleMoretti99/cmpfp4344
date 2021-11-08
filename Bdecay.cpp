@@ -12,6 +12,7 @@ using namespace std;
 
 int main(){
   TLorentzVector p4_B;
+  int i;
   double p_pix,p_piy,p_piz,p_Kx,p_Ky,p_Kz;
   double m_B=5.279; //GeV
   double m_pi=0.14;
@@ -20,11 +21,14 @@ int main(){
   double E_B=sqrt(pow(m_B,2)+pow(p_B,2));
   p4_B.SetPxPyPzE(p_B,0,0,E_B);
   p4_B.Print();
-  double p_cdm=sqrt(pow(m_B,4)+pow(m_pi,4)+pow(m_K,4)-2*pow(m_B,2)*pow(m_pi,2)-2*pow(m_B,2)*pow(m_pi,2)-2*pow(m_pi,2)*pow(m_k,2))/(2*m_B);
-  for(i=0,i<=10000,i++){
-    sphere(p_Kx,p_Ky,p_Kz,p_cdm);
-    sphere(p_pix,p_piy,pi_piz,p_cdm);
+  double p_cdm=sqrt(pow(m_B,4)+pow(m_pi,4)+pow(m_K,4)-2*pow(m_B,2)*pow(m_pi,2)-2*pow(m_B,2)*pow(m_pi,2)-2*pow(m_pi,2)*pow(m_K,2))/(2*m_B);
+  TRandom* gen = new TRandom();
+  gen->SetSeed(0);
+  for(i=0;i<10000;++i){
+    gen->Sphere(p_Kx,p_Ky,p_Kz,p_cdm);
+    gen->Sphere(p_pix,p_piy,p_piz,p_cdm);
   }
   
   return 0;
 }
+
