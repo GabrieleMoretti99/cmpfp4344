@@ -34,12 +34,13 @@ int main(){
     double p_K=sqrt(pow(p_Kx,2)+pow(p_Ky,2)+pow(p_Kz,2));
     double E_pi=sqrt(pow(p_pi,2)+pow(m_pi,2));
     double E_K=sqrt(pow(p_K,2)+pow(m_K,2));
+    double m_inv=pow(m_pi,2)+pow(m_K,2)+2*(E_pi*E_K-p_pi*p_K);
     p4_K.SetPxPyPzE(p_Kx,p_Ky,p_Kz,E_K);
     p4_pi.SetPxPyPzE(p_pix,p_piy,p_piz,E_pi);
     p4_K.Beta();
     p4_K.Gamma();
     p4_pi.Beta();
-    p4_pi.Gamma(); 
+    p4_pi.Gamma();
   }
   return 0;
 }
