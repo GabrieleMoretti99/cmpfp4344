@@ -1,0 +1,39 @@
+import math as m
+import random
+import matplotlib.pyplot as plt
+
+x_inside = []
+y_inside = []
+
+x_outside = []
+y_outside = []
+
+N = 100
+
+inside = 0
+
+for i in range(N):
+
+  x = random.uniform(-1,1)
+  y = random.uniform(-1,1)
+
+  r = m.sqrt(x**2 + y**2)
+
+  if r <= 1:
+
+    x_inside.append(x)
+    y_inside.append(y)
+    inside+=1
+    
+  else:
+
+    x_outside.append(x)
+    y_outside.append(y)
+
+
+stima = 4*inside/N
+print ("stima di pi greco = ", stima)
+plt.plot(x_inside, y_inside, label="inside", color='red', marker='.')
+plt.plot(x_outside, y_outside, label="outside", color='blue', marker='.')
+
+plt.legend()
